@@ -57,9 +57,9 @@
 			n=0;
 		}
 		$(this).siblings('input').val(n);
-		var onePreice=parseFloat($(this).parent('.num').siblings('.price').find('u').jsp());
+		var onePreice=parseFloat($(this).parent('.num').siblings('.price').find('u').html());
 		var OlAll=n*onePreice;
-		$(this).parent('li').siblings('.Lastprice').children('u').jsp(OlAll);
+		$(this).parent('li').siblings('.Lastprice').children('u').html(OlAll);
 		console.log(OlAll);
 		setTotal(); 
 	});
@@ -67,9 +67,9 @@
 		var n=parseFloat($(this).siblings('input').val());
 		n++;
 		$(this).siblings('input').val(n);
-		var onePreice=parseFloat($(this).parent('.num').siblings('.price').find('u').jsp());
+		var onePreice=parseFloat($(this).parent('.num').siblings('.price').find('u').html());
 		var OlAll=n*onePreice;
-		$(this).parent('li').siblings('.Lastprice').children('u').jsp(OlAll);
+		$(this).parent('li').siblings('.Lastprice').children('u').html(OlAll);
 		setTotal(); 
 	});
 	function setTotal(){
@@ -77,15 +77,15 @@
 		var nu=0;
 		$(".IAbdArea .IAbdw").each(function(){ 
 			if ($(this).find('.lincheck').hasClass('checked')) {
-				s+=parseInt($(this).find('.Lastprice u').jsp());
+				s+=parseInt($(this).find('.Lastprice u').html());
 				nu+=parseInt($(this).find('.num input').val());
 			} else{
 				s=s;
 				nu=nu;
 			};
 		}); 
-		$("#allpri").jsp(s); 
-		$('#allnum').jsp(nu);
+		$("#allpri").html(s); 
+		$('#allnum').html(nu);
 		} 
 		setTotal(); 
 });</script>

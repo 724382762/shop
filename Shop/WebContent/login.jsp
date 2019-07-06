@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +21,7 @@
 		<!-- 搜索和logo -->
 		<div class="logoAndSearch textWarp w1190 clearfix">
 			<div class="logo">
-				<a href="#">澳猫网</a>
+				<a href="list.jsp">澳猫网</a>
 			</div>
 			<div class="LAStxt">
 				欢迎登录
