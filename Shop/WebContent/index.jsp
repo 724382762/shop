@@ -1,3 +1,5 @@
+<%@page import="com.oracle.shop.model.javabean.Goods"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
@@ -758,7 +760,15 @@
 				</div>
 				<!-- 商品内容 -->
 				<div class="product">
+				
+				
+					
 					<ul class="clearfix">
+					<%
+						List<Goods> gs = (List<Goods>)request.getAttribute("gs");
+						for ( Goods g:gs){
+					
+					%>
 						<li>
 							<div class="hoverShow collect"><em></em>收藏</div>
 							<!-- <div class="hoverShow wish"><em></em>加入心愿单</div> -->
@@ -772,16 +782,19 @@
 								</a>
 							</div>
 							<div class="proTxt">
-								<p><a href="#">Blackmores EPO月见草 澳洲澳佳宝 190粒...</a></p>
-								<p class="num">已售出1000件</p>
+								<p><a href="#"><%=g.getGoodsname() %></a></p>
+								<p class="num"><%=g.getStock() %></p>
 								<p>
-									<strong>￥178.00</strong>
-									<s>￥256.00</s>
+									<strong><%=String.format("%.2f", g.getPrice()*g.getDiscount()) %></strong>
+									<s><%=g.getPrice() %></s>
 								</p>
 							</div>
 						</li>
-						
+						<% } %>
 					</ul>
+					
+					
+					
 				</div>
 				<!-- 底部页码 -->
 				<div class="footNum">
