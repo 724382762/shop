@@ -31,7 +31,7 @@
 					</a>
 				</div>
 				<div class="user">
-					<a target="_blank" href="#">登录</a>
+					<a target="_blank" href="login.jsp">登录</a>
 					<span>|</span>
 					<a target="_blank" href="#">免费注册</a>
 				</div>
