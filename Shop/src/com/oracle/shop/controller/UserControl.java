@@ -50,8 +50,8 @@ public class UserControl {
 	
 
 	@RequestMapping("/register")
-	public String register(String username,String password) {
-		
+	public String register(String username,String password,String name,String age,String phone) {
+//		dao.register(username, password, sex, age, phone)
 		return "index";
 	}
 }
