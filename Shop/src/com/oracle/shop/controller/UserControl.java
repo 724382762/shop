@@ -39,10 +39,19 @@ public class UserControl {
 		}
 		
 	}
+	
+	@RequestMapping("/logout")
+	public String logout(HttpSession session){
+		if (session.getAttribute("logineduser") != null) {
+			session.setAttribute("logineduser", null);
+		}
+		return "index";
+	}
+	
 
 	@RequestMapping("/register")
-	public String register() {
-		System.out.println("user -register");
+	public String register(String username,String password) {
+		
 		return "index";
 	}
 }
