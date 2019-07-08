@@ -1,10 +1,16 @@
 package com.oracle.shop.model.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+
+import com.oracle.shop.model.javabean.Cart;
+import com.oracle.shop.model.javabean.Goods;
+import com.sun.org.apache.bcel.internal.generic.RETURN;
 
 
 @Mapper
@@ -23,4 +29,13 @@ public interface CarDAO {
 	@Select("select count(*) from cart where userid=#{user} and goodsid=#{goodsid} limit 1")
 	public int checkExit(@Param("user")int userid,@Param("goodsid")int goodsid);
 	
+	//根据用户id查用户购物车
+	@Select("select * from cart where userid=#{user}")
+	public List<Cart> listProductCar(@Param("user")int userid);
+	
+	//根据goodsid查询商品详细信息
+	@Select("select * from goods where goodsid=#{goodsid}")
+	public Goods getGoodsByGoodsId(int goodsid);
+	
 }
+

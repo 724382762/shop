@@ -31,6 +31,9 @@ public class Orders implements Serializable {
 	/** ﾓﾃｻｧｱ犲ﾅ. */
 	private Integer userid;
 
+	/** ﾊﾕｻﾋ. */
+	private String name;
+
 	/**
 	 * コンストラクタ.
 	 */
@@ -149,6 +152,25 @@ public class Orders implements Serializable {
 	 */
 	public Integer getUserid() {
 		return this.userid;
+	}
+
+	/**
+	 * ﾊﾕｻﾋ を設定します.
+	 * 
+	 * @param name
+	 *            ﾊﾕｻﾋ
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/**
+	 * ﾊﾕｻﾋ を取得します.
+	 * 
+	 * @return ﾊﾕｻﾋ
+	 */
+	public String getName() {
+		return this.name;
 	}
 
 	/**

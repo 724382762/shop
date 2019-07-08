@@ -43,7 +43,7 @@
 					%>
 						<a target="_blank" href="login.jsp">登录</a>
 						<span>|</span>
-						<a target="_blank" href="#">免费注册</a>
+						<a target="_blank" href="register.jsp">免费注册</a>
 					<%}else{ %>
 						欢迎您：<b><%=((Users)session.getAttribute("logineduser")).getUsername() %></b>
 						<a style="padding-left: 5px" href="user/logout">安全退出</a>
@@ -789,7 +789,7 @@
 							</div>
 							<div class="proImg">
 								<a href="#">
-									<img class="lazy" src="js/lazyload/grey.gif" data-original="images/product2L.jpg" alt="">
+									<img class="lazy" src="" data-original=<%=g.getPicture() %> alt=""></img>
 								</a>
 							</div>
 							<div class="proTxt">

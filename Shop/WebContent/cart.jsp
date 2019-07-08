@@ -1,3 +1,6 @@
+<%@page import="java.util.HashMap"%>
+<%@page import="com.oracle.shop.model.javabean.Goods"%>
+<%@page import="java.util.Map"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
@@ -306,66 +309,26 @@
 				<span class="tax">保税仓发货</span>
 				<span>新郑综合保税区</span>
 			</h4>
-			<ul class="IAbdArea">
+			<ul class="IAbdArea">		
+				<%
+					Map<Goods,Integer> detail = (Map<Goods,Integer>)request.getAttribute("detail");
+					for(Goods g : detail.keySet()){
+				%>
 				<li class="IAbdw">
 					<span class="lincheck checkbox"></span>
-					<img src="images/cartpro.jpg" alt="">
+					<img src=<%=g.getPicture() %> alt="">
 					<p>
-						<a class="pro" href="#">Blackmores EPo月见草 160粒保养卵巢 调节内分泌</a>
-						<a class="use" href="#">
-							适用税率：10%
-							<s></s>
-							<u>
-								<em></em>
-								税费 = 不含税价格 * 件数 * 商品税率<br>
-								根据海关规定，本商品适用税率 : 10%,<br>
-								若订单总税额 ≤ 50元，海关予以免征。<br>
-							</u>
-						</a>
+						<a class="pro" href="#"><%=g.getGoodsname() %></a>
 					</p>
 					<ul class="IAul">
 						<li class="IAtax">￥<u>11.40</u></li>
 						<li class="price">
-							<strong>¥ <u>82.00</u></strong><br>
-							<s>125元</s>
+							<strong>¥ <u><%=String.format("%.2f", g.getPrice()*g.getDiscount()) %></u></strong><br>
+							<s><%=g.getPrice() %></s>
 						</li>
 						<li class="num">
 							<span class="reduce">-</span>
-							<input type="text" value="1">
-							<span class="add">+</span>
-						</li>
-						<li class="Lastprice">¥ <u>82.00</u></li>
-						<li class="last btn">
-							<button>移入收藏夹</button><br>
-							<button class="delet">删除</button>
-						</li>
-					</ul>
-				</li>
-				<li class="IAbdw">
-					<span class="lincheck checkbox"></span>
-					<img src="images/cartpro.jpg" alt="">
-					<p>
-						<a class="pro" href="#">Blackmores EPo月见草 160粒保养卵巢 调节内分泌</a>
-						<a class="use" href="#">
-							适用税率：10%
-							<s></s>
-							<u>
-								<em></em>
-								税费 = 不含税价格 * 件数 * 商品税率<br>
-								根据海关规定，本商品适用税率 : 10%,<br>
-								若订单总税额 ≤ 50元，海关予以免征。<br>
-							</u>
-						</a>
-					</p>
-					<ul class="IAul">
-						<li class="IAtax">￥<u>11.40</u></li>
-						<li class="price">
-							<strong>¥ <u>89.00</u></strong><br>
-							<s>125元</s>
-						</li>
-						<li class="num">
-							<span class="reduce">-</span>
-							<input type="text" value="1">
+							<input type="text" value=<%=detail.get(g) %>>
 							<span class="add">+</span>
 						</li>
 						<li class="Lastprice">¥ <u>89.00</u></li>
@@ -375,6 +338,7 @@
 						</li>
 					</ul>
 				</li>
+				<%} %>
 			</ul>
 			<div class="account">
 				<ul>

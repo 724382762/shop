@@ -1,6 +1,10 @@
 package com.oracle.shop.controller;
 
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.oracle.shop.model.dao.CarDAO;
 import com.oracle.shop.model.dao.UserDAO;
+import com.oracle.shop.model.javabean.Cart;
+import com.oracle.shop.model.javabean.Goods;
 import com.oracle.shop.model.javabean.Users;
 
 
@@ -38,8 +44,30 @@ public class CarController {
 				//记录已存在，商品数量+1
 				dao.updateProduct(userid, pid);
 			}
-			return "cart";
+			return "redirect:list";
 		}
-		return "login";
+		return "index";
+	}
+	@RequestMapping("/list")
+	public String listProductCars(HttpSession session,Model m){
+		if(session.getAttribute("logineduser")==null){
+			return "index";
+		}
+		
+		Map<Goods, Integer> detailCars = new HashMap();
+		
+		//从session中获得用户id
+		int userid=((Users)session.getAttribute("logineduser")).getUserid();
+		
+		List<Cart> carts = dao.listProductCar(userid);
+		
+		int i = 0;
+		for(Cart cart : carts){
+			detailCars.put(dao.getGoodsByGoodsId(cart.getGoodsid()), cart.getQuantity());
+			i++;
+		}
+		m.addAttribute("detail", detailCars);
+		return "cart";
+		
 	}
 }
