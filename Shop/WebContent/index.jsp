@@ -1,3 +1,4 @@
+<%@page import="com.oracle.shop.model.javabean.Users"%>
 <%@page import="com.oracle.shop.model.javabean.Goods"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -5,6 +6,11 @@
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+<%
+	if(request.getAttribute("gs") == null){
+		request.getRequestDispatcher("/product/list").forward(request, response);
+	}
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,9 +37,16 @@
 					</a>
 				</div>
 				<div class="user">
-					<a target="_blank" href="login.jsp">登录</a>
-					<span>|</span>
-					<a target="_blank" href="#">免费注册</a>
+					<%
+						if(session.getAttribute("logineduser") == null){
+							
+					%>
+						<a target="_blank" href="login.jsp">登录</a>
+						<span>|</span>
+						<a target="_blank" href="#">免费注册</a>
+					<%}else{ %>
+						欢迎您：<b><%=((Users)session.getAttribute("logineduser")).getUsername() %></b>
+						<%} %>>
 				</div>
 				<div class="phone">
 					<a href="#">
