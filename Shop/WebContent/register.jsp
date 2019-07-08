@@ -69,10 +69,6 @@
 							</p>
 							<p class="userName">
 								<em></em>
-								<input class="W310" name="age" placeholder="请输入您的年龄" type="text">
-							</p>
-							<p class="userName">
-								<em></em>
 								<input class="W310" name="phone" placeholder="请输入您的电话号码" type="text">
 							</p>
 							<p class="passWord">
