@@ -61,10 +61,8 @@ public class CarController {
 		
 		List<Cart> carts = dao.listProductCar(userid);
 		
-		int i = 0;
 		for(Cart cart : carts){
 			detailCars.put(dao.getGoodsByGoodsId(cart.getGoodsid()), cart.getQuantity());
-			i++;
 		}
 		m.addAttribute("detail", detailCars);
 		return "cart";

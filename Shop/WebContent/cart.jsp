@@ -304,6 +304,7 @@
 			</ul>
 		</div> 
 		<div class="IAbd">
+			<form action="order/add"  method="post" >
 			<h4>
 				<span class="Allcheck checkbox"></span>
 				<span class="tax">保税仓发货</span>
@@ -316,6 +317,7 @@
 				%>
 				<li class="IAbdw">
 					<span class="lincheck checkbox"></span>
+					<input type="checkbox"  name="pid" value=<%=g.getGoodsid() %>>
 					<img src=<%=g.getPicture() %> alt="">
 					<p>
 						<a class="pro" href="#"><%=g.getGoodsname() %></a>
@@ -328,10 +330,10 @@
 						</li>
 						<li class="num">
 							<span class="reduce">-</span>
-							<input type="text" value=<%=detail.get(g) %>>
+							<input type="text" name="count" value=<%=detail.get(g) %>>
 							<span class="add">+</span>
 						</li>
-						<li class="Lastprice">¥ <u>89.00</u></li>
+						<li class="Lastprice">¥ <u><%=detail.get(g) * g.getPrice() %></u></li>
 						<li class="last btn">
 							<button>移入收藏夹</button><br>
 							<button class="delet">删除</button>
@@ -342,25 +344,15 @@
 			</ul>
 			<div class="account">
 				<ul>
-					<li>活动优惠 ：-￥<u>0.00</u></li>
-					<li>商品应付总计 ：￥<u>114.00</u></li>
-					<li class="main">免关税</li>
-					<li class="mprice">￥<u>11.4</u></li>
+					<li>收货人：<input name="name" type="text" style="height:20px"></li>
+					<li>收货地址：<input name="address" type="text" style="height:20px;width: 200px"></li>
+					<li>备注：<input name="remark" type="text" style="height:20px;width:200px"></li>
 				</ul>
 			</div>
-			<div class="IAbdfoot">
-				<span class="checkbox Allcheck"></span>
-				<span>全选</span>
-				<span class="Information">删除选中商品</span>
-				<a href="#">去结算</a>
-				<p>
-					<strong>已选商品<b id="allnum"> 1 </b>件</strong>
-					<strong>总价（不含运费）：<b>￥<u id="allpri">114.00</u></b></strong><br>
-					<em>活动优惠 ：-￥<u>0.00</u></em>
-					<em>商品应付总计 ：￥<u>114.00</u></em>
-					<em>订单关税：￥<u>0</u></em>
-				</p>
+			<div class="IAbdfoot" style="margin-top: -20px">
+				<input type="submit" value="提交"></input>
 			</div>
+			</form>
 		</div>                          
 	</div>
 </div>

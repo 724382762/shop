@@ -21,9 +21,7 @@ public class ProductController {
 	
 	@RequestMapping("/list")
 	public String listProduct(Model  m){
-		System.out.println("进入后台");
 		List<Goods> gs = dao.listGoods();
-		System.out.println(gs);
 		m.addAttribute("gs", gs);
 		return "index";
 	}
