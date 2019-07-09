@@ -263,7 +263,7 @@
 	<div class="logoAndSearch w1190">
 		<!-- logo -->
 		<div class="logo">
-			<a href="#">澳猫网</a>
+			<a href="index.jsp">澳猫网</a>
 		</div>
 	</div>
 </section>
@@ -285,6 +285,11 @@
 			<ul class="IAbdArea">		
 				<%
 					List<Goods> goods = (List<Goods>)request.getAttribute("goodinfo");
+					if(goods.isEmpty()){
+						
+						%>
+						<span style="font-size: 1cm;color: red;font-weight: bold;margin-top: 50px;display: block;">您的收藏夹空空如也！</span>
+					<% }else{
 					for(Goods g:goods){
 				%>
 				<li class="IAbdw">
@@ -304,7 +309,7 @@
 						</li>
 					</ul>
 				</li>
-				<% } %>
+				<% }} %>
 			</ul>
 
 		</div>                          

@@ -100,7 +100,7 @@
 			</connections>
 			<display>false</display>
 			<creation_date>2019-07-07 10:48:32</creation_date>
-			<updated_date>2019-07-09 16:15:49</updated_date>
+			<updated_date>2019-07-09 18:24:35</updated_date>
 			<model_property>
 				<name>Project Name</name>
 				<value></value>
@@ -506,7 +506,7 @@
 			<connections>
 				<relation>
 					<id>0</id>
-					<source>1</source>
+					<source>5</source>
 					<target>0</target>
 					<child_cardinality>1..n</child_cardinality>
 					<parent_cardinality>1</parent_cardinality>
@@ -523,7 +523,7 @@
 				</relation>
 				<relation>
 					<id>1</id>
-					<source>5</source>
+					<source>1</source>
 					<target>0</target>
 					<child_cardinality>1..n</child_cardinality>
 					<parent_cardinality>1</parent_cardinality>
@@ -602,7 +602,7 @@
 				<normal_column>
 					<id>2</id>
 					<referenced_column>29</referenced_column>
-					<relation>1</relation>
+					<relation>0</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -630,7 +630,7 @@
 				<normal_column>
 					<id>3</id>
 					<referenced_column>4</referenced_column>
-					<relation>0</relation>
+					<relation>1</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>

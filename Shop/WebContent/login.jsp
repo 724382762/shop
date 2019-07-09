@@ -27,7 +27,7 @@
 		<!-- 搜索和logo -->
 		<div class="logoAndSearch textWarp w1190 clearfix">
 			<div class="logo">
-				<a href="list.jsp">澳猫网</a>
+				<a href="index.jsp">澳猫网</a>
 			</div>
 			<div class="LAStxt">
 				欢迎登录
@@ -72,13 +72,7 @@
 								<em></em>
 								<input class="W310" name="password" placeholder="请输入密码" type="password">
 							</p>
-							<p class="clearfix yzm">
-								<input type="text" placeholder="验证码">
-								<span class="Ypic">
-									<span class="YP"></span>
-									<a href="#">换一张</a>
-								</span>
-							</p>
+
 							<p class="clearfix Jzmm">
 								<span class="checkbox checked"></span>
 								<span>记住密码</span>

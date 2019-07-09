@@ -179,7 +179,7 @@
 	<div class="logoAndSearch w1190">
 		<!-- logo -->
 		<div class="logo">
-			<a href="#">澳猫网</a>
+			<a href="index,jsp">澳猫网</a>
 		</div>
 		<div class="LAStxt">
 			提交订单

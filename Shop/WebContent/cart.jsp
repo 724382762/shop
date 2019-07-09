@@ -262,7 +262,7 @@
 	<div class="logoAndSearch w1190">
 		<!-- logo -->
 		<div class="logo">
-			<a href="#">澳猫网</a>
+			<a href="index.jsp">澳猫网</a>
 		</div>
 		<div class="LAStxt">
 			购物车
@@ -310,9 +310,16 @@
 				<span class="tax">保税仓发货</span>
 				<span>新郑综合保税区</span>
 			</h4>
-			<ul class="IAbdArea">		
+			<ul class="IAbdArea">	
+	
+					
 				<%
 					Map<Goods,Integer> detail = (Map<Goods,Integer>)request.getAttribute("detail");
+					if(detail.isEmpty()){
+						
+					%>
+					<span style="font-size: 1cm;color: red;font-weight: bold;margin-top: 50px;display: block;">您的购物车空空如也！</span>
+				<% }else{
 					for(Goods g : detail.keySet()){
 				%>
 				<li class="IAbdw">
@@ -341,7 +348,7 @@
 						</li>
 					</ul>
 				</li>
-				<%} %>
+				<%}} %>
 			</ul>
 <script type="text/javascript">
 	function deleteProduct(pid){

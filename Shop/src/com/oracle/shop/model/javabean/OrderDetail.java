@@ -16,11 +16,17 @@ public class OrderDetail implements Serializable {
 	/** 订单详情标号. */
 	private Integer itemid;
 
-	/** 订单号. */
-	private Integer orderid;
-
 	/** 商品编号. */
 	private Integer goodsid;
+
+	/** 订单号. */
+	private String orderid;
+
+	/** 数量. */
+	private Integer number;
+
+	/** 头像图片. */
+	private String image;
 
 	/**
 	 * 僐儞僗僩儔僋僞.
@@ -48,25 +54,6 @@ public class OrderDetail implements Serializable {
 	}
 
 	/**
-	 * 订单号 傪愝掕偟傑偡.
-	 * 
-	 * @param orderid
-	 *            订单号
-	 */
-	public void setOrderid(Integer orderid) {
-		this.orderid = orderid;
-	}
-
-	/**
-	 * 订单号 傪庢摼偟傑偡.
-	 * 
-	 * @return 订单号
-	 */
-	public Integer getOrderid() {
-		return this.orderid;
-	}
-
-	/**
 	 * 商品编号 傪愝掕偟傑偡.
 	 * 
 	 * @param goodsid
@@ -83,6 +70,63 @@ public class OrderDetail implements Serializable {
 	 */
 	public Integer getGoodsid() {
 		return this.goodsid;
+	}
+
+	/**
+	 * 订单号 傪愝掕偟傑偡.
+	 * 
+	 * @param orderid
+	 *            订单号
+	 */
+	public void setOrderid(String orderid) {
+		this.orderid = orderid;
+	}
+
+	/**
+	 * 订单号 傪庢摼偟傑偡.
+	 * 
+	 * @return 订单号
+	 */
+	public String getOrderid() {
+		return this.orderid;
+	}
+
+	/**
+	 * 数量 傪愝掕偟傑偡.
+	 * 
+	 * @param number
+	 *            数量
+	 */
+	public void setNumber(Integer number) {
+		this.number = number;
+	}
+
+	/**
+	 * 数量 傪庢摼偟傑偡.
+	 * 
+	 * @return 数量
+	 */
+	public Integer getNumber() {
+		return this.number;
+	}
+
+	/**
+	 * 头像图片 傪愝掕偟傑偡.
+	 * 
+	 * @param image
+	 *            头像图片
+	 */
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	/**
+	 * 头像图片 傪庢摼偟傑偡.
+	 * 
+	 * @return 头像图片
+	 */
+	public String getImage() {
+		return this.image;
 	}
 
 	/**

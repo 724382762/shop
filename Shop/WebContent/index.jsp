@@ -60,7 +60,7 @@
 			<!-- 头部右边 -->
 			<div class="headRight">
 				<ul>
-					<li><a href="#">我的订单</a></li><span>|</span>
+					<li><a href="order/detail">我的订单</a></li><span>|</span>
 					<li class="erWrap">
 						<strong></strong>
 						<a href="#">个人中心</a>
@@ -199,7 +199,7 @@
 	<div class="logoAndSearch w1190 textWarp">
 		<!-- logo -->
 		<div class="logo">
-			<a href="index.html">澳猫网</a>
+			<a href="index.jsp">澳猫网</a>
 		</div>
 		<!-- 搜索 -->
 		<div class="search">
@@ -819,8 +819,11 @@
 						<li class="last"><a target="_self" href="product/list?page=<%=request.getAttribute("nextPage") %>">下一页</a></li>
 						<li class="last"><a target="_self" href="product/list?page=<%=request.getAttribute("allPage") %>">尾页</a></li>
 						<li class="txt">向第</li>
-						<li class="ipt"><input type="text"></li>
-						<li><button>跳转</button></li>
+						<form method="post" action="product/jump">
+							<li class="ipt"><input name="pagenumber" type="text"></li>
+							<li><button type>跳转</button></li>
+						</form>
+						
 					</ul>
 				</div>
 			</div>

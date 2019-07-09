@@ -13,14 +13,6 @@ public class Goods implements Serializable {
 	/** serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
-	@Override
-	public String toString() {
-		return "Goods [goodsid=" + goodsid + ", goodsname=" + goodsname
-				+ ", brandname=" + brandname + ", price=" + price + ", stock="
-				+ stock + ", picture=" + picture + ", sale=" + sale
-				+ ", discount=" + discount + "]";
-	}
-
 	/** …Ã∆∑±‡∫≈. */
 	private Integer goodsid;
 

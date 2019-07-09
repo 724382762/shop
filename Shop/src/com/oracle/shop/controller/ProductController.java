@@ -40,5 +40,29 @@ public class ProductController {
 		
 		return "index";
 	}
+	
+	
+	@RequestMapping("/jump")
+	public String listProductByPageNumber(int pagenumber,Model m){
+		
+		int count=20;//后台规定的每页分的条数
+		List<Goods> gs = dao.listGoodsByPage((pagenumber-1)*count,count);
+		m.addAttribute("gs", gs);
+		
+		
+		int allCount=dao.getAllCountOfGoods();//查询数据库获取总行数
+		int allPage=allCount%count==0?allCount/count:allCount/count+1;//总页数
+		int perviousPage=pagenumber-1==0?1:pagenumber-1;  //上一页
+		int nextPage=pagenumber==allPage?allPage:pagenumber+1; //下一页
+		m.addAttribute("perviousPage", perviousPage);
+		m.addAttribute("nextPage", nextPage);
+		m.addAttribute("allPage", allPage);
+		m.addAttribute("nowPage", pagenumber);
+		m.addAttribute("allCount", allCount);
+		m.addAttribute("count", count);
+		
+		return "index";
+	}
+	
 
 }
