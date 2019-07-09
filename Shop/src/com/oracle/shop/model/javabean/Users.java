@@ -22,14 +22,11 @@ public class Users implements Serializable {
 	/** 密码. */
 	private String password;
 
-	/** 性别. */
-	private String sex;
-
-	/** 年龄. */
-	private Integer age;
-
 	/** 电话号码. */
 	private String phone;
+
+	/** 头像. */
+	private String image;
 
 	/**
 	 * 僐儞僗僩儔僋僞.
@@ -95,44 +92,6 @@ public class Users implements Serializable {
 	}
 
 	/**
-	 * 性别 傪愝掕偟傑偡.
-	 * 
-	 * @param sex
-	 *            性别
-	 */
-	public void setSex(String sex) {
-		this.sex = sex;
-	}
-
-	/**
-	 * 性别 傪庢摼偟傑偡.
-	 * 
-	 * @return 性别
-	 */
-	public String getSex() {
-		return this.sex;
-	}
-
-	/**
-	 * 年龄 傪愝掕偟傑偡.
-	 * 
-	 * @param age
-	 *            年龄
-	 */
-	public void setAge(Integer age) {
-		this.age = age;
-	}
-
-	/**
-	 * 年龄 傪庢摼偟傑偡.
-	 * 
-	 * @return 年龄
-	 */
-	public Integer getAge() {
-		return this.age;
-	}
-
-	/**
 	 * 电话号码 傪愝掕偟傑偡.
 	 * 
 	 * @param phone
@@ -149,6 +108,25 @@ public class Users implements Serializable {
 	 */
 	public String getPhone() {
 		return this.phone;
+	}
+
+	/**
+	 * 头像 傪愝掕偟傑偡.
+	 * 
+	 * @param image
+	 *            头像
+	 */
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	/**
+	 * 头像 傪庢摼偟傑偡.
+	 * 
+	 * @return 头像
+	 */
+	public String getImage() {
+		return this.image;
 	}
 
 	/**

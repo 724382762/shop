@@ -20,9 +20,24 @@ public class ProductController {
 	
 	
 	@RequestMapping("/list")
-	public String listProduct(Model  m){
-		List<Goods> gs = dao.listGoods();
+	public String listProduct(Model  m,int page){
+		
+		int count=20;//后台规定的每页分的条数
+		List<Goods> gs = dao.listGoodsByPage((page-1)*count,count);
 		m.addAttribute("gs", gs);
+		
+		
+		int allCount=dao.getAllCountOfGoods();//查询数据库获取总行数
+		int allPage=allCount%count==0?allCount/count:allCount/count+1;//总页数
+		int perviousPage=page-1==0?1:page-1;  //上一页
+		int nextPage=page==allPage?allPage:page+1; //下一页
+		m.addAttribute("perviousPage", perviousPage);
+		m.addAttribute("nextPage", nextPage);
+		m.addAttribute("allPage", allPage);
+		m.addAttribute("nowPage", page);
+		m.addAttribute("allCount", allCount);
+		m.addAttribute("count", count);
+		
 		return "index";
 	}
 

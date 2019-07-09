@@ -88,31 +88,7 @@
 						</div>
 					</div>
 				</div>
-				<div style="margin-top: 10px" class="MCdown">
-					<p>使用其他账户登录</p>
-					<ul>
-						<li class="clearfix">
-							<em></em>
-							<a href="#">QQ登录</a>
-						</li>
-						<li class="clearfix">
-							<em></em>
-							<a href="#">微博登录</a>
-						</li>
-						<li class="clearfix">
-							<em></em>
-							<a href="#">腾讯微博</a>
-						</li>
-						<li class="clearfix">
-							<em></em>
-							<a href="#">微信登录</a>
-						</li>
-						<li class="clearfix BN">
-							<em></em>
-							<a href="#">百度登录</a>
-						</li>
-					</ul>
-				</div>
+				
 			</div>
 		</div>
 	</div>

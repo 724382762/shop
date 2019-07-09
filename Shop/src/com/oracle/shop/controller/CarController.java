@@ -46,7 +46,7 @@ public class CarController {
 			}
 			return "redirect:list";
 		}
-		return "index";
+		return "login";
 	}
 	@RequestMapping("/list")
 	public String listProductCars(HttpSession session,Model m){
@@ -68,4 +68,16 @@ public class CarController {
 		return "cart";
 		
 	}
+	
+	
+	@RequestMapping("/delete")
+	public String deleteProduct(int pid,HttpSession session){
+		
+		//从session中获得用户id
+		int userid=((Users)session.getAttribute("logineduser")).getUserid();
+		dao.deleteProductByGoodsid(pid, userid);
+		return "redirect:list";
+	}
+	
+	
 }

@@ -47,7 +47,7 @@ public class UserControl {
 		if (session.getAttribute("logineduser") != null) {
 			session.setAttribute("logineduser", null);
 		}
-		return "index";
+		return "login";
 	}
 	
 

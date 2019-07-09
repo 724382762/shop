@@ -2,6 +2,7 @@ package com.oracle.shop.model.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -36,6 +37,10 @@ public interface CarDAO {
 	//根据goodsid查询商品详细信息
 	@Select("select * from goods where goodsid=#{goodsid}")
 	public Goods getGoodsByGoodsId(int goodsid);
+	
+	//删除商品
+	@Delete("delete from cart where goodsid=#{goodsid} and userid=#{userid}")
+	public int deleteProductByGoodsid(@Param("goodsid")int goodsid,@Param("userid")int userid);
 	
 }
 

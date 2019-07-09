@@ -27,6 +27,6 @@ public interface UserDAO {
 	
 	
 	//зЂВс
-	@Insert("insert into users(username,password,phone) values(#{username},#{password},#{phone})")
+	@Insert("insert into users(username,password,phone,image) values(#{username},#{password},#{phone},'images/timg.jpg')")
 	public int Register(@Param("username")String username,@Param("password")String password,@Param("phone")String phone);
 }
