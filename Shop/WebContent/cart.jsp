@@ -342,7 +342,7 @@
 						</li>
 						<li class="Lastprice">¥ <u><%=detail.get(g) * g.getPrice() %></u></li>
 						<li class="last btn">
-							<a href="likes/add?goodsid=<%=g.getGoodsid() %>" >移入收藏夹</a><br>
+							<a href="likes/add?goodsid=<%=g.getGoodsid() %>&name=like" >移入收藏夹</a><br>
 							
 						<a class="delete"  href="javascript:deleteProduct(<%=g.getGoodsid() %>)">删除</a>
 						</li>

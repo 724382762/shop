@@ -30,7 +30,7 @@
 				<a href="index.jsp">澳猫网</a>
 			</div>
 			<div class="LAStxt">
-				欢迎登录
+				欢迎注册
 			</div>
 			<div class="search">
 				<div class="txt">
@@ -59,26 +59,24 @@
 			<div class="mainContent boxS">
 				<div class="MCup clearfix">
 					<div class="MCright W310">
-						<form method="post" action="user/login">
+						<form method="post" action="user/find">
 							<h3 class="clearfix">
-								<span>登录澳猫团</span>
-								<a target="_blank" href="register.jsp">免费注册</a>
+								<span>注册澳猫团</span>
 							</h3>
 							<p class="userName">
 								<em></em>
-								<input class="W310" name="username" placeholder="请输入您的手机号/邮箱" type="text">
+								<input class="W310" name="username" placeholder="请输入您的用户名" type="text">
+							</p>
+							<p class="userName">
+								<em></em>
+								<input class="W310" name="findcode" placeholder="请输入您的找回码" type="text">
 							</p>
 							<p class="passWord">
 								<em></em>
-								<input class="W310" name="password" placeholder="请输入密码" type="text">
+								<input class="W310" name="password" placeholder="请重置密码" type="text">
 							</p>
-
-							<p class="clearfix Jzmm">
-								<span class="checkbox checked"></span>
-								<span>记住密码</span>
-								<a target="_self"  href="find.jsp">忘记密码？</a>
-							</p>
-							<button type="submit" class="loGin W310" targer="_self" href="#">登录</button>
+							
+							<button type="submit" class="loGin W310" href="#">确定</button>
 						</form>
 					</div>
 					<div class="MCleft W115">
@@ -90,31 +88,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="MCdown">
-					<p>使用其他账户登录</p>
-					<ul>
-						<li class="clearfix">
-							<em></em>
-							<a href="#">QQ登录</a>
-						</li>
-						<li class="clearfix">
-							<em></em>
-							<a href="#">微博登录</a>
-						</li>
-						<li class="clearfix">
-							<em></em>
-							<a href="#">腾讯微博</a>
-						</li>
-						<li class="clearfix">
-							<em></em>
-							<a href="#">微信登录</a>
-						</li>
-						<li class="clearfix BN">
-							<em></em>
-							<a href="#">百度登录</a>
-						</li>
-					</ul>
-				</div>
+				
 			</div>
 		</div>
 	</div>

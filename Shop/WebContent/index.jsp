@@ -41,12 +41,12 @@
 						if(session.getAttribute("logineduser") == null){
 							
 					%>
-						<a target="_blank" href="login.jsp">登录</a>
+						<a target="_self" href="login.jsp" >登录</a>
 						<span>|</span>
-						<a target="_blank" href="register.jsp">免费注册</a>
+						<a target="_self" href="register.jsp">免费注册</a>
 					<%}else{ %>
-						欢迎您：<img src=<%=((Users)session.getAttribute("logineduser")).getImage() %> style="width: 10px;height: 10px;border-radius:8px" ><b><%=((Users)session.getAttribute("logineduser")).getUsername() %></b>
-						<a style="padding-left: 5px" href="user/logout">安全退出</a>
+						欢迎您：<img src=<%=((Users)session.getAttribute("logineduser")).getImage() %> style="width:10px;height:10px" ><b><%=((Users)session.getAttribute("logineduser")).getUsername() %></b>
+						<a style="padding-left: 5px" href="user/logout" target="_self">安全退出</a>
 						<%} %>
 				</div>
 				<div class="phone">
@@ -781,15 +781,15 @@
 					
 					%>
 						<li style="margin-right: 8px">
-							<div class="hoverShow collect"><em></em>收藏</div>
+							
 							<!-- <div class="hoverShow wish"><em></em>加入心愿单</div> -->
 							<div class="show">
-								<a class="add" href="car/add?pid=<%=g.getGoodsid()%>">加入购物车</a>
-								<a class="contrast"  href="likes/add?goodsid=<%=g.getGoodsid()%>">加入收藏夹</a>
+								<a class="add" target="_self" href="car/add?pid=<%=g.getGoodsid()%>">加入购物车</a>
+								<a class="contrast" target="_self" href="likes/add?goodsid=<%=g.getGoodsid()%>&name=index">加入收藏夹</a>
 							</div>
 							<div class="proImg">
 								<a href="#">
-									<img class="lazy" src="" data-original=<%=g.getPicture() %> alt=""></img>
+									<img class="lazy" style src="" data-original=<%=g.getPicture() %> alt=""></img>
 								</a>
 							</div>
 							<div class="proTxt">

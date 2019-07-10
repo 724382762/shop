@@ -2,6 +2,7 @@ package com.oracle.shop.model.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -32,5 +33,13 @@ public interface OrderDAO {
 	
 	@Select("select * from goods where goodsid=#{0}")
 	public Goods getGoodsByGoodsid(int goodsid);
+	
+	//在订单表中删除订单
+	@Delete("delete from orders where orderid=#{orderid}")
+	public int deleteOrderByOrderidFromOrder(@Param("orderid")String order);
 
+	//在订单详情表中删除订单
+	@Delete("delete from order_detail where orderid=#{orderid}")
+	public int deleteOrderByOrderidFromOrderdetail(@Param("orderid")String order);
+	
 }

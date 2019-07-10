@@ -1,8 +1,12 @@
 package com.oracle.shop.controller;
 
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,13 +42,22 @@ public class LikesController {
 	}
 	
 	@RequestMapping("/add")
-	public String addLike(HttpSession session,int goodsid){
+	public void addLike(String name,HttpSession session,int goodsid,HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException{
 		
 		if (session.getAttribute("logineduser") == null) {
-			return "login";
+			request.getRequestDispatcher("/login.jsp").forward(request, response);
 		}else {
 			dao.addProduct(new Date().toLocaleString(), "1", ((Users)session.getAttribute("logineduser")).getUserid(), goodsid);
-			return "index";
+			
+			//如果在购物车界面进行加入收藏夹，跳转回到购物车界面
+			if(name.equals("like")){
+				request.getRequestDispatcher("/car/list").forward(request, response);
+			}
+			//否则就是在主页，跳转回主页
+			else{
+				request.getRequestDispatcher("/index.jsp").forward(request, response);
+			}
+			
 		}	
 	}
 	

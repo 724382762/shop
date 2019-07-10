@@ -53,17 +53,35 @@ public class UserControl {
 
 	//×¢²á
 	@RequestMapping("/register")
-	public String register(String username,String password,String phone,HttpSession session) {
+	public String register(String username,String password,String phone,HttpSession session,int findcode) {
 		
 		
 		Users u = dao.checkExit(username);
 		if(u == null){
-			dao.Register(username, password, phone);
+			dao.Register(username, password, phone,findcode);
 			u = dao.login(username, password);
 			session.setAttribute("logineduser", u);
 			return "index";
 		}
 		return "register";
 		
+	}
+	
+	
+	//Íü¼ÇÃÜÂë
+	@RequestMapping("/find")
+	public String find(String username,String password,int findcode,HttpSession session){
+		
+		int coderesult = dao.checkCode(username, findcode);
+		if (coderesult == 0) {
+			System.out.println("ÕÒ»ØÂë´íÎó£¬ÖØÖÃÊ§°Ü!");
+			return "find";
+		}else{
+			dao.resetPassword(password, username);
+			Users u = dao.login(username, password);
+			System.out.println("ÖØÖÃÃÜÂë³É¹¦£¡");
+			session.setAttribute("logineduser", u);
+			return "index";
+		}
 	}
 }

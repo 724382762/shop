@@ -4,8 +4,10 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import com.oracle.shop.model.javabean.Users;
+import com.sun.org.apache.xml.internal.resolver.helpers.PublicId;
 
 
 /**
@@ -27,6 +29,15 @@ public interface UserDAO {
 	
 	
 	//◊¢≤·
-	@Insert("insert into users(username,password,phone,image) values(#{username},#{password},#{phone},'images/timg.jpg')")
-	public int Register(@Param("username")String username,@Param("password")String password,@Param("phone")String phone);
+	@Insert("insert into users(username,password,phone,image,findcode) values(#{username},#{password},#{phone},'images/timg.jpg',#{findcode})")
+	public int Register(@Param("username")String username,@Param("password")String password,@Param("phone")String phone,@Param("findcode")int findcode);
+	
+	//≈–∂œ’“ªÿ¬Î
+	@Select("select count(*) from users where username=#{username} and findcode=#{findcode}")
+	public int checkCode(@Param("username")String username,@Param("findcode")int findcode);
+	
+	//÷ÿ÷√√‹¬Î
+	@Update("update users set password=#{password} where username=#{username}")
+	public int resetPassword(@Param("password")String password,@Param("username")String username);
+	
 }

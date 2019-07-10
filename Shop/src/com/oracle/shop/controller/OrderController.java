@@ -39,7 +39,7 @@ public class OrderController {
 		for(int i = 0 ; i < pid.length;i++){
 			int result2 = dao.addProduct(pid[i], uuid.toString(), count[i]);
 		}
-		return "orders";
+		return "redirect:detail";
 	}
 	
 	
@@ -67,4 +67,16 @@ public class OrderController {
 			return "test";
 		}
 	}
+	
+	
+	@RequestMapping("/delete")
+	public String deleteOrder(String orderid){
+		
+		System.out.println(orderid);
+		dao.deleteOrderByOrderidFromOrderdetail(orderid);
+		dao.deleteOrderByOrderidFromOrder(orderid);
+		
+		return "redirect:detail";
+	}
+	
 }

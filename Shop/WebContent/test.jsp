@@ -1,3 +1,4 @@
+<%@page import="com.oracle.shop.model.javabean.Users"%>
 <%@page import="com.oracle.shop.model.javabean.Goods"%>
 <%@page import="com.oracle.shop.model.javabean.Orders"%>
 <%@page import="java.util.Map"%>
@@ -26,12 +27,23 @@
 			<!-- 头部左边 -->
 			<div class="headLeft">
 				<div class="hello">
-					<a href="#"> <em></em> <span>澳猫首页</span> <span>嗨，澳猫欢迎你！</span>
+					<a href="index.jsp"> <em></em> <span>澳猫首页</span> <span>嗨，澳猫欢迎你！</span>
 					</a>
 				</div>
 				<div class="user">
-					<a target="_blank" href="#">登录</a> <span>|</span> <a
-						target="_blank" href="#">免费注册</a>
+					<div class="user">
+					<%
+						if(session.getAttribute("logineduser") == null){
+							
+					%>
+						<a target="_self" href="login.jsp" >登录</a>
+						<span>|</span>
+						<a target="_self" href="register.jsp">免费注册</a>
+					<%}else{ %>
+						欢迎您：<b><%=((Users)session.getAttribute("logineduser")).getUsername() %></b>
+						<a style="padding-left: 5px" href="user/logout" target="_self">安全退出</a>
+						<%} %>
+				</div>
 				</div>
 				<div class="phone">
 					<a href="#"> <em></em> <span>手机逛澳猫</span>
@@ -42,7 +54,7 @@
 			<!-- 头部右边 -->
 			<div class="headRight">
 				<ul>
-					<li><a href="#">我的订单</a></li>
+					<li><a href="order/detail">我的订单</a></li>
 					<span>|</span>
 					<li class="erWrap"><strong></strong> <a href="#">个人中心</a> <em></em>
 						<p class="headEr">
@@ -187,7 +199,7 @@
 	<div class="logoAndSearch w1190 textWarp">
 		<!-- logo -->
 		<div class="logo">
-			<a href="index.html">澳猫网</a>
+			<a href="index.jsp">澳猫网</a>
 		</div>
 		<!-- 搜索 -->
 		<div class="search">
@@ -651,19 +663,30 @@
 								</ul>
 							</div>
 							<!-- 个人中心的内容 -->
+							
+							<script type="text/javascript">
+								function deleteOrder(orderid){
+									if(window.confirm('确认删除这个商品吗')){
+										location.href='order/delete?orderid='+orderid;
+									}
+								}
+							</script>
 							<!-- 全部订单 -->
 							<div class="MeOrder">
 								<% Map<Orders, Map<Goods, String>> od=(Map<Orders, Map<Goods, String>>)request.getAttribute("orderDetail");
 									for(Orders o:od.keySet()){
+										int i = 0;
 								%>
-									<div style="border: 1px solid blue;padding-top: 20px">
-									<h1 style="margin-bottom: 20px;margin-left: 20px;text-shadow: 0px 0px 2px green">订单编号:<%=o.getOrderid() %>&nbsp;&nbsp;&nbsp;
-									下单时间:<%=o.getTime() %>&nbsp;&nbsp;&nbsp;
-									收货人:<%=o.getName() %>&nbsp;&nbsp;&nbsp;
-									收货地址:<%=o.getAddress()%>&nbsp;&nbsp;&nbsp;
-									</h1>
 									<% for(Goods g:od.get(o).keySet()){ %>
-								
+										<div style="border: 1px solid blue;padding-top: 20px">
+										<h1 style="margin-bottom: 20px;margin-left: 20px;text-shadow: 0px 0px 2px green">订单编号:<%=o.getOrderid() %>&nbsp;&nbsp;&nbsp;
+										下单时间:<%=o.getTime() %>&nbsp;&nbsp;&nbsp;
+										收货人:<%=o.getName() %>&nbsp;&nbsp;&nbsp;
+										收货地址:<%=o.getAddress()%>&nbsp;&nbsp;&nbsp;
+										<%if(i == 0){ %>
+										<a href="javascript:deleteOrder('<%=o.getOrderid() %>')">取消订单</a>
+										<%} %>
+										</h1>
 								<!-- 报关中 -->
 								<div class="merchandiseList">
 									<div class="ListArea">
@@ -676,11 +699,9 @@
 													</div>
 													<div class="pruTitle"><%=g.getGoodsname() %></div>
 											</a>
-												<div class="pruNum">
-													×<i><%=od.get(o).get(g) %></i>
-												</div></li>
+												
 											<li class="three">
-												<p>总额￥<%=Integer.valueOf(od.get(o).get(g))*g.getPrice() %>/p>
+												<p>总额￥<%=g.getPrice() %>/p>
 												<p>在线支付</p>
 												<p>含税/运费：￥0.00</p>
 											</li>
@@ -690,13 +711,12 @@
 													<a href="">订单详情</a>
 												</p>
 											</li>
-											<li class="five"><a href="">取消订单</a></li>
 											
 										</ul>
 									</div>
 									
 								</div>
-								<%} %>
+								<%i++;} %>
 									</div>
 								
 								<%} %>

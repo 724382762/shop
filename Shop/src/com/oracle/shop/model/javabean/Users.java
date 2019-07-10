@@ -28,6 +28,9 @@ public class Users implements Serializable {
 	/** 头像. */
 	private String image;
 
+	/** 找回码. */
+	private Integer findcode;
+
 	/**
 	 * 僐儞僗僩儔僋僞.
 	 */
@@ -127,6 +130,25 @@ public class Users implements Serializable {
 	 */
 	public String getImage() {
 		return this.image;
+	}
+
+	/**
+	 * 找回码 傪愝掕偟傑偡.
+	 * 
+	 * @param findcode
+	 *            找回码
+	 */
+	public void setFindcode(Integer findcode) {
+		this.findcode = findcode;
+	}
+
+	/**
+	 * 找回码 傪庢摼偟傑偡.
+	 * 
+	 * @return 找回码
+	 */
+	public Integer getFindcode() {
+		return this.findcode;
 	}
 
 	/**

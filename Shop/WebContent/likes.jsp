@@ -265,6 +265,9 @@
 		<div class="logo">
 			<a href="index.jsp">澳猫网</a>
 		</div>
+		<div class="LAStxt">
+			我的收藏夹
+		</div>
 	</div>
 </section>
 <!-- 订单部分 -->

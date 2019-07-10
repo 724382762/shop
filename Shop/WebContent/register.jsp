@@ -71,9 +71,13 @@
 								<em></em>
 								<input class="W310" name="phone" placeholder="请输入您的电话号码" type="text">
 							</p>
+							<p class="userName">
+								<em></em>
+								<input class="W310" name="findcode" placeholder="请输入您的找回码" type="text">
+							</p>
 							<p class="passWord">
 								<em></em>
-								<input class="W310" name="password" placeholder="请输入密码" type="password">
+								<input class="W310" name="password" placeholder="请输入密码" type="text">
 							</p>
 							
 							<button type="submit" class="loGin W310" href="#">注册</button>

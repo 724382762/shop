@@ -1,7 +1,7 @@
 .mainArea{
 	background:#F2F2F2;
 }
-/*顶部位置导航*/
+/*椤堕儴浣嶇疆瀵艰埅*/
 .subnav{
 	height: 60px;
 	line-height: 60px;
@@ -13,7 +13,7 @@
 .SNLeft li a{
 	color: #666;
 }
-/*主要内容*/
+/*涓昏鍐呭*/
 .sidebar{
 	width: 200px;
 	float: left;
@@ -21,24 +21,24 @@
 .mianContent{
 	width: 960px;
 	float: right;
-	font: 12px/28px "微软雅黑";
+	font: 12px/28px "寰蒋闆呴粦";
 }
 .sidebar h3{
 	text-align: center;
-	font: 14px/40px "微软雅黑";
+	font: 14px/40px "寰蒋闆呴粦";
 	background:#D6D7D8;
 }
 .content a{
 	color: #333;
 }
-/*侧边*/
-/*全部分类*/
+/*渚ц竟*/
+/*鍏ㄩ儴鍒嗙被*/
 .classify{
 	background: #fff;
 	margin-bottom: 20px;
 }
 .ClaCont{
-	font: 12px/35px "微软雅黑";
+	font: 12px/35px "寰蒋闆呴粦";
 	background: #fff;
 	padding:0 20px;
 }
@@ -83,7 +83,7 @@
 .ClaCont .cli ul{
 	display: block;
 }
-/*热卖排行榜*/
+/*鐑崠鎺掕姒�*/
 .HRproduct{
 	padding:20px;
 	margin-bottom: 20px;
@@ -100,13 +100,13 @@
 	margin-bottom: 10px;
 }
 .HRproduct li .HRtxt{
-	font: 12px/18px "微软雅黑";
+	font: 12px/18px "寰蒋闆呴粦";
 }
 .HRproduct li .HRtxt p:nth-of-type(2){
 	margin-top: 5px;
 }
 .HRproduct li .HRtxt p:nth-of-type(2) strong{
-	font: bold 14px/18px "微软雅黑";
+	font: bold 14px/18px "寰蒋闆呴粦";
 	float: left;
 }
 .HRproduct li .HRtxt p a{
@@ -116,8 +116,8 @@
 	color: #999999;
 	float: right;
 }
-/*右边主要内容*/
-/*品牌故事*/
+/*鍙宠竟涓昏鍐呭*/
+/*鍝佺墝鏁呬簨*/
 .BStroy{
 	width: 960px;
 	height: 240px;
@@ -155,10 +155,10 @@
 }
 .BScenter h6{
 	text-align: center;
-	font: bold 24px/48px "微软雅黑";
+	font: bold 24px/48px "寰蒋闆呴粦";
 }
 .BScenter p{
-	font: 12px/26px "微软雅黑";
+	font: 12px/26px "寰蒋闆呴粦";
 }
 .BStroy .BSright{
 	float: right;
@@ -170,7 +170,7 @@
 	background: #fff;
 	height: 300px;
 }
-/*商品筛选*/
+/*鍟嗗搧绛涢��*/
 .screen{
 	background:#D6D7D8;
 	border:1px solid #E5E5E5;
@@ -225,7 +225,7 @@
 .brand li.sreA em{
 	display: block;
 }
-/*你是不是要找*/
+/*浣犳槸涓嶆槸瑕佹壘*/
 .find{
 	padding:5px 15px;
 	background:#fff;
@@ -249,14 +249,14 @@
 .find li a:hover{
 	color: #00AAEE;
 }
-/*筛选*/
+/*绛涢��*/
 /*.srenTitle .sreA{
 	display: block;
 	float: left;
 	margin-right: 10px;
 }
 .srenTitle span{
-	font: 12px/24px "微软雅黑";
+	font: 12px/24px "寰蒋闆呴粦";
 	color: #999;
 	border:1px solid #EDEDED;
 	padding:0 10px;
@@ -265,7 +265,7 @@
 	margin-left: 5px;
 	cursor: pointer;
 }*/
-/*筛选条件*/
+/*绛涢�夋潯浠�*/
 .sort{
 	background: #fff;
 	border:1px solid #E5E5E5;
@@ -297,7 +297,7 @@
 	width: 30px;
 	text-align: center;
 	margin-top: 3px;
-	font: 12px/20px "微软雅黑";
+	font: 12px/20px "寰蒋闆呴粦";
 	cursor: pointer;
 }
 .change .right{
@@ -306,14 +306,14 @@
 .change .left{
 	float: left;
 }
-/*商品内容*/
+/*鍟嗗搧鍐呭*/
 .product li{
 	width: 218px;
 	float: left;
 	margin-right: 10px;
 	background: #fff;
 	padding:6px 6px 30px 6px;
-	font:12px/16px "微软雅黑";
+	font:12px/16px "寰蒋闆呴粦";
 	position: relative;
 	cursor: pointer;
 	transition:all 0.3s;
@@ -333,7 +333,7 @@ li.mrNone{
 	transform:translate(0, -5px);
 	border:1px solid #999;
 }
-/*图片*/
+/*鍥剧墖*/
 .proImg{
 	text-align: center;
 	width: 220px;
@@ -342,23 +342,25 @@ li.mrNone{
  	vertical-align:middle;
 }
 .proImg img{
+	width: 122px;
+	height: 144px;
 	display: inline-block;
 	vertical-align:middle;
 }
-/*文字*/
+/*鏂囧瓧*/
 .proTxt{
 	padding:0 6px;
 }
 .proTxt strong{
 	color: #E50065;
-	font: bold 18px/30px "微软雅黑";
+	font: bold 18px/30px "寰蒋闆呴粦";
 	margin-right: 10px;
 }
 .proTxt s{
 	color: #999;
 }
 .proTxt a{
-	font: 12px/14px "微软雅黑";
+	font: 12px/14px "寰蒋闆呴粦";
 }
 .proTxt a:hover{
 	color: #00AAEE;
@@ -370,7 +372,7 @@ li.mrNone{
 	padding-bottom: 5px;
 	border-bottom: 1px dashed #999;
 }
-/*顶部*/
+/*椤堕儴*/
 .privilege{
 	width: 81px;
 	position: absolute;
@@ -384,7 +386,7 @@ li.mrNone{
 	width: 40px;
 	display: block;
 	color: #fff;
-	font:12px/24px "微软雅黑";
+	font:12px/24px "寰蒋闆呴粦";
 }
 .privilege .left{
 	float: left;
@@ -392,10 +394,10 @@ li.mrNone{
 .privilege .right{
 	float: right;
 }
-/*鼠标经过显示*/
+/*榧犳爣缁忚繃鏄剧ず*/
 .hoverShow{
 	position: absolute;
-	font:12px/24px "微软雅黑";
+	font:12px/24px "寰蒋闆呴粦";
 	top: 215px;
 	width: 50px;
 	color: #fff;
@@ -409,7 +411,7 @@ li.mrNone{
 	top:15%;
 	left: -35%;
 }
-/*收藏*/
+/*鏀惰棌*/
 /*.collect{
 	right: -114px;
 	
@@ -436,7 +438,7 @@ li.mrNone{
 .collect em.fish{
 	background: url(../images/acIconhover.png) center center no-repeat;
 }
-/*加入心愿单*/
+/*鍔犲叆蹇冩効鍗�*/
 /*.wish{
 	width: 105px;
 	padding-left: 10px;
@@ -450,7 +452,7 @@ li.mrNone{
 .product li:hover .wish{
 	left: 0;
 }*/
-/*按钮*/
+/*鎸夐挳*/
 .show{
 	position: absolute;
 	width: 232px;
@@ -461,7 +463,7 @@ li.mrNone{
 	width: 110px;
 	display: block;
 	text-align: center;
-	font: 12px/30px "微软雅黑";
+	font: 12px/30px "寰蒋闆呴粦";
 }
 a.contrast{
 	float: left;
@@ -535,13 +537,14 @@ a.add:hover{
 		bottom: 0px;
 	}
 }
-/*底部页码*/
+/*搴曢儴椤电爜*/
 .footNum{
 	height: 30px;
 	margin:15px 0;
 }
 .footNum ul{
-	float: right;
+	margin-left:110px;
+	text-align:center;
 }
 .footNum ul li{
 	float: left;

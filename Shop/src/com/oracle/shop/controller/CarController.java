@@ -44,7 +44,7 @@ public class CarController {
 				//记录已存在，商品数量+1
 				dao.updateProduct(userid, pid);
 			}
-			return "redirect:list";
+			return "index";
 		}
 		return "login";
 	}

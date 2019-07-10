@@ -19,10 +19,10 @@ public interface LikeDAO {
 	@Insert("insert into likes(likestime,classname,userid,goodsid) values(#{likestime},#{classname},#{userid},#{goodsid})")
 	public int addProduct(@Param("likestime")String likestime,@Param("classname")String classname,@Param("userid")int userid,@Param("goodsid")int goodsid); 
 	
-	
+	//查询当前用户
 	@Select("select * from goods where goodsid in(select goodsid from likes where userid=#{userid})")
 	public List<Goods> listGoodsByUserid(@Param("userid")int userid);
-
+   //删除当前用户收藏夹的某一项
 	@Delete("delete from likes where goodsid=#{productid} and userid=#{userid}")
 	public int deleteGoodsFromLikes(@Param("userid")int userid,@Param("productid")int productid);
 }
