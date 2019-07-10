@@ -70,7 +70,7 @@
 					<span>|</span>
 					<li class="erWrap"><a href="#">消费者告知书</a></li>
 					<span>|</span>
-					<li class="erWrap"><a href="#">收藏夹</a> <em></em>
+					<li class="erWrap"><a href="likes/list">收藏夹</a> <em></em>
 						<p class="headEr different">
 							<a href="#">收藏的宝贝</a> <a class="last" href="#">收藏的品牌</a>
 						</p></li>
@@ -666,7 +666,7 @@
 							
 							<script type="text/javascript">
 								function deleteOrder(orderid){
-									if(window.confirm('确认删除这个商品吗')){
+									if(window.confirm('确认删除这个订单吗')){
 										location.href='order/delete?orderid='+orderid;
 									}
 								}
@@ -678,12 +678,13 @@
 										int i = 0;
 								%>
 									<% for(Goods g:od.get(o).keySet()){ %>
+									<%if(i == 0){ %>
 										<div style="border: 1px solid blue;padding-top: 20px">
 										<h1 style="margin-bottom: 20px;margin-left: 20px;text-shadow: 0px 0px 2px green">订单编号:<%=o.getOrderid() %>&nbsp;&nbsp;&nbsp;
 										下单时间:<%=o.getTime() %>&nbsp;&nbsp;&nbsp;
 										收货人:<%=o.getName() %>&nbsp;&nbsp;&nbsp;
 										收货地址:<%=o.getAddress()%>&nbsp;&nbsp;&nbsp;
-										<%if(i == 0){ %>
+										
 										<a href="javascript:deleteOrder('<%=o.getOrderid() %>')">取消订单</a>
 										<%} %>
 										</h1>

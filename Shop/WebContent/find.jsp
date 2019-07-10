@@ -30,7 +30,7 @@
 				<a href="index.jsp">澳猫网</a>
 			</div>
 			<div class="LAStxt">
-				欢迎注册
+				找回密码
 			</div>
 			<div class="search">
 				<div class="txt">
@@ -61,7 +61,7 @@
 					<div class="MCright W310">
 						<form method="post" action="user/find">
 							<h3 class="clearfix">
-								<span>注册澳猫团</span>
+								<span>找回密码</span>
 							</h3>
 							<p class="userName">
 								<em></em>

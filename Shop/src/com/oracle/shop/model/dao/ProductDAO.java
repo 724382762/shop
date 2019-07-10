@@ -18,8 +18,12 @@ public interface ProductDAO {
 	@Select("select *  from goods limit #{startindex},#{count}")
 	public List<Goods> listGoodsByPage(@Param("startindex")int startIndex,@Param("count")int count);
 	
+	@Select("select *  from goods where sale='yes' limit #{startindex},#{count}")
+	public List<Goods> listSaleGoodsByPage(@Param("startindex")int startIndex,@Param("count")int count);
+	
 	@Select("select count(*) from goods")
 	public int getAllCountOfGoods();
-
 	
+	@Select("select count(*) from goods where sale='yes'")
+	public int getAllCountOfSaleGoods();
 }

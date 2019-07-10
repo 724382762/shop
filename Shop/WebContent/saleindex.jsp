@@ -9,7 +9,7 @@
 %>
 <%
 	if(request.getAttribute("gs") == null){
-		request.getRequestDispatcher("product/list?page=1").forward(request, response);
+		request.getRequestDispatcher("product/sale?page=1").forward(request, response);
 	}
 %>
 <!DOCTYPE html>
@@ -466,7 +466,7 @@
 						<a href="#">首 页</a>
 					</li>
 					<li>
-						<a target="_blank" href="product/sale?page=1">特价团购</a>
+						<a target="_blank" href="#">特价团购</a>
 						<em class="hot_sell"></em>
 					</li>
 					<li>
@@ -816,12 +816,12 @@
 <!-- 						<li class="num current"><a href="#">1</a></li> -->
 <!-- 						<li class="num"><a href="#">2</a></li> -->
 <!-- 						<li class="num"><a href="#">3</a></li> -->
-						<li class="last"><a target="_self" href="product/list?page=<%=request.getAttribute("nextPage") %>">下一页</a></li>
-						<li class="last"><a target="_self" href="product/list?page=<%=request.getAttribute("allPage") %>">尾页</a></li>
+						<li class="last"><a target="_self" href="product/sale?page=<%=request.getAttribute("nextPage") %>">下一页</a></li>
+						<li class="last"><a target="_self" href="product/sale?page=<%=request.getAttribute("allPage") %>">尾页</a></li>
 						<li class="txt">向第</li>
-						<form method="post" action="product/jump">
+						<form method="post" action="product/jumpsale">
 							<li class="ipt"><input name="pagenumber" type="text"></li>
-							<li><button type="submit">跳转</button></li>
+							<li><button type>跳转</button></li>
 						</form>
 						
 					</ul>

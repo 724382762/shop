@@ -125,7 +125,7 @@
 			<div class="headRight">
 			<ul>
 				<li><a class="everday" href="#">每日签到</a></li><span>|</span>
-				<li><a href="#">我的订单</a></li><span>|</span>
+				<li><a href="order/detail">我的订单</a></li><span>|</span>
 				<li class="erWrap">
 					<strong></strong>
 					<a href="#">个人中心</a>
@@ -152,7 +152,7 @@
 				</li>
 				<span>|</span>
 				<li class="erWrap">
-					<a href="#">收藏夹</a>
+					<a href="likes/list">收藏夹</a>
 					<em></em>
 					<p class="headEr different">
 						<a href="#">收藏的宝贝</a>
@@ -277,7 +277,7 @@
 		<div class="IAhead">
 			<span class="Information">商品信息</span>
 			<ul class="IAul">
-				<li>单价（元）</li>
+				<li>商品税（元）</li>
 				<li>金额（元）</li>
 				<li class="last">操作</li>
 			</ul>

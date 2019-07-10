@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.oracle.shop.model.dao.CarDAO;
 import com.oracle.shop.model.dao.OrderDAO;
 import com.oracle.shop.model.javabean.Goods;
 import com.oracle.shop.model.javabean.OrderDetail;
@@ -28,6 +29,11 @@ public class OrderController {
 	
 	@Autowired
 	private OrderDAO dao;
+	
+	@Autowired
+	private CarDAO carDAO;
+	
+	
 	@RequestMapping("/add")
 	public String addOrder(int[] pid,int[] count,String name,String address,String remark,HttpSession session){
 		
@@ -39,6 +45,8 @@ public class OrderController {
 		for(int i = 0 ; i < pid.length;i++){
 			int result2 = dao.addProduct(pid[i], uuid.toString(), count[i]);
 		}
+		
+		carDAO.deleteProductByUserid(((Users)session.getAttribute("logineduser")).getUserid());
 		return "redirect:detail";
 	}
 	

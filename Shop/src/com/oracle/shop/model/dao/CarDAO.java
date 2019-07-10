@@ -42,5 +42,9 @@ public interface CarDAO {
 	@Delete("delete from cart where goodsid=#{goodsid} and userid=#{userid}")
 	public int deleteProductByGoodsid(@Param("goodsid")int goodsid,@Param("userid")int userid);
 	
+	//É¾³ýÉÌÆ·
+	@Delete("delete from cart where userid=#{userid}")
+	public int deleteProductByUserid(@Param("userid")int userid);
+	
 }
 
